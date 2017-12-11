@@ -4,34 +4,9 @@ using System.Text;
 using Superpower;
 using Superpower.Model;
 using Superpower.Parsers;
-using Xunit;
 
-namespace XUnitTestProject1
+namespace Ecl
 {
-
-    public class UnitTest1
-    {
-        [Fact]
-        public void Test1()
-        {
-            var str = "3*2";
-            var tokenizer = new ArithmeticExpressionTokenizer();
-            var p = tokenizer.Tokenize(str);
-            var r = ArithmeticExpressionParser.Lambda.Parse(p);
-            var compiled = r.Compile();
-            var result = compiled();
-
-        }
-
-        [Fact]
-        public void Test2()
-        {
-            var sut = new EclTokenizer();
-            var str = "UPFLOPPY@,()123";
-            var tokens = sut.Tokenize(str).ToList();
-        }
-    }
-
     public class EclTokenizer : Tokenizer<EclToken>
     {
         protected override IEnumerable<Result<EclToken>> Tokenize(TextSpan span)
@@ -113,19 +88,5 @@ namespace XUnitTestProject1
 
             return Result.Value(simpleToken, next.Location, next.Remainder);
         }
-    }
-
-    // ECL - Elevator Control Language ;-)
-    public enum EclToken
-    {
-        None,
-        LParen,
-        RParen,
-        UpKeyword,
-        DownKeyword,
-        WaitKeyword,
-        AtSymbol,
-        Number,
-        Comma,
     }
 }
