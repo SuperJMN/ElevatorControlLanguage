@@ -21,6 +21,6 @@ As you see, it consists of a list of comma-separated verbs to move, for example,
 
 - The verbs are **UP**, **DOWN** or **WAIT**.
 - Every verb is enclosed by parentheses: **( )**
-- UP and DOWN require either an absolute number or a relative number, that indicates the floor to which the elevator should move. 
+- **UP** and **DOWN** require either an absolute number or a relative number, that indicates the floor to which the elevator should move. 
 - Relative floor numbers come with a **@** before the number.
-- WAIT doesn't accept any number, because it stops the elevator for a while.
+- **WAIT** doesn't accept any number, because it stops the elevator for a while.
