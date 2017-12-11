@@ -3,7 +3,7 @@ Simple parser using [SuperPower](https://github.com/datalust/superpower), the pa
 
 Take a look to learn how to create a parser for a simple language! :)
 
-I have invented very basic grammar just to learn. I have thought of an elevator that follows a list of instructions to go up, down and wait.
+I have invented a very basic grammar just to learn. I have thought of an elevator that follows a list of instructions to go up, down and wait.
 
 **Example**:
 
