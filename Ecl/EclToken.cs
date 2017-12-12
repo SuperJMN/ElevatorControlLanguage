@@ -11,5 +11,6 @@ namespace Ecl
         AtSymbol,
         Number,
         Comma,
+        Whitespace
     }
 }

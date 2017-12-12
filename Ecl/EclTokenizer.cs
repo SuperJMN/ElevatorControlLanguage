@@ -14,6 +14,13 @@ namespace Ecl
             var next = SkipWhiteSpace(span);
             do
             {
+                var nextValue = next.Value;
+                if (char.IsWhiteSpace(nextValue))
+                {
+                    yield return Result.Value(EclToken.Whitespace, next.Location, next.Remainder);
+                    next = next.Remainder.ConsumeChar();
+                }
+
                 if (char.IsLetter(next.Value))
                 {
                     var keywordBuilder = new StringBuilder();
@@ -33,7 +40,7 @@ namespace Ecl
                     next = next.Remainder.ConsumeChar();
 
                     var keyword = keywordBuilder.ToString();
-                    EclToken token = EclToken.None;
+                    var token = EclToken.None;
                     switch (keyword)
                     {
                         case "UP":
