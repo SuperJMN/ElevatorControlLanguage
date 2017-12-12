@@ -15,15 +15,14 @@ namespace Ecl.Tests
         }    
         
         [Fact]
-        public void DownKeyoword()
+        public void DownKeyword()
         {
             var tokenizer = new EclTokenizer();
             var parsed = EclParser.Command.Parse(tokenizer.Tokenize("(DOWN 123)"));
 
             var elevatorCommand = new ElevatorCommand()
             {
-                Distance = new Distance() { IsRelative = false, Value = 123},
-                IsRelative = false,
+                Distance = new Distance() { IsRelative = false, Value = -123},
             };
 
             Assert.Equal(elevatorCommand, parsed);

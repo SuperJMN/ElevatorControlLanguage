@@ -6,7 +6,8 @@ namespace Ecl
 {
     public static class EclParser
     {
-        public static TokenListParser<EclToken, int> Number = Token.EqualTo(EclToken.Number).Apply(Numerics.IntegerInt32);
+        public static TokenListParser<EclToken, int> Number = 
+            Token.EqualTo(EclToken.Number).Apply(Numerics.IntegerInt32);
 
         public static TokenListParser<EclToken, ElevatorCommand> Up =
             from _ in Token.EqualTo(EclToken.UpKeyword)
@@ -15,7 +16,6 @@ namespace Ecl
             select new ElevatorCommand
             {
                 Distance = distance,
-                IsRelative = false
             };
 
         public static TokenListParser<EclToken, Distance> AbsoluteDistance =
@@ -45,7 +45,6 @@ namespace Ecl
             select new ElevatorCommand
             {
                 Distance = distance.GetOpposite(),
-                IsRelative = false
             };
 
         public static TokenListParser<EclToken, ElevatorCommand> Wait =
@@ -53,7 +52,6 @@ namespace Ecl
             select new ElevatorCommand
             {
                 IsWait = true,
-                IsRelative = false
             };
 
         public static TokenListParser<EclToken, ElevatorCommand> Command =
