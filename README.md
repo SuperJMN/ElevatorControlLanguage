@@ -1,6 +1,8 @@
 # Elevator Control Language
 Simple parser using [SuperPower](https://github.com/datalust/superpower), the parser combinator by [Nicholas Blumhardt](https://twitter.com/nblumhardt)
 
+## This project was inspired by [this thread](https://stackoverflow.com/questions/47740985/parsing-a-simple-text-grammar-with-superpower/47743790#47743790) in StackOverflow.
+
 Take a look to learn how to create a parser for a simple language! :)
 
 I have invented a very basic grammar just to learn. I have thought of an elevator that follows a list of instructions to go up, down and wait.
